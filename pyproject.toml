@@ -28,6 +28,7 @@ psutil = "^5.9.7"
 ipython = "^8.18.1"
 sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
+drf-yasg = "^1.21.7"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
@@ -35,6 +36,7 @@ model-bakery = "^1.12.0"
 pre-commit = "^3.3.3"
 pylint-django = "^2.5.3"
 ruff = "^0.1.8"
+pytest-django = "^4.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.2.0"]
@@ -146,3 +148,9 @@ lines-after-imports = 2
 branch = true
 source = ["backend"]
 omit = ["**/venv/*", "**/env/*", "**/virtualenvs/*", "**/node_modules/*", "**/migrations/*", "**/settings/*", "**/tests/*"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "test.settings"
+django_find_project = false
+pythonpath = [".", "backend"]
+python_files = ["test_*.py", "*_test.py", "tests/*.py"]

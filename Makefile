@@ -16,12 +16,10 @@ clean: ## Remove all cached files
 
 
 .PHONY: test
-test: ## Run tests (keeping the database)
-	poetry run backend/manage.py test backend/ $(ARG) --parallel --keepdb
+test: ## Run tests
+	poetry run pytest $(ARG)
+	npm run test
 
-.PHONY: test_reset
-test_reset: ## Run tests (but reset the database)
-	poetry run backend/manage.py test backend/ $(ARG) --parallel
 
 # Commands for Docker version
 .PHONY: docker_setup
@@ -37,12 +35,9 @@ lint: ## Perform linting (using Docker)
 	poetry run ruff format
 
 .PHONY: docker_test
-docker_test: ## Run tests (keeping the database)
-	docker-compose run backend python manage.py test $(ARG) --parallel --keepdb
-
-.PHONY: docker_test_reset
-docker_test_reset: ## Run tests (but reset the database)
-	docker-compose run backend python manage.py test $(ARG) --parallel
+docker_test: ## Run tests
+	docker-compose run backend pytest $(ARG)
+	docker-compose run frontend npm run test
 
 .PHONY: docker_up
 docker_up: ## Run the project containers
@@ -74,3 +69,11 @@ docker_lint: ## Perform linting (using Docker)
 	docker-compose run frontend npm run lint
 	docker-compose run backend ruff check --fix
 	docker-compose run backend ruff format
+
+.PHONY: docker_frontend
+docker_frontend: ## Access the bash shell for the frontend
+	docker-compose run --rm frontend sh
+
+.PHONY: docker_backend
+docker_backend: ## Access the bash shell for the backend
+	docker-compose run --rm backend bash
