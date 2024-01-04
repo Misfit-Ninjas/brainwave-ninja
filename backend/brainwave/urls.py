@@ -12,12 +12,12 @@ from rest_framework.routers import DefaultRouter
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
+        title="Brainwave API",
         default_version="v1",
-        description="Test description",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="BSD License"),
+        description="This is the backend API of Brainwave",
+        terms_of_service=None,
+        contact=openapi.Contact(email="admin@brainwave.ninja"),
+        license=openapi.License(name="Apache 2.0 License"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
