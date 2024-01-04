@@ -2,6 +2,15 @@
 
 ## Running
 
+- Brainwave Website: http://localhost:8000
+- Brainwave API Documentation:
+    - Swagger:
+        - Web version: http://localhost:8000/api/swagger/
+        - JSON: http://localhost:8000/api/swagger.json
+        - YAML: http://localhost:8000/api/swagger.yaml
+    - Redoc:
+        - http://localhost:8000/api/redoc/
+
 ### Tools
 
 -   Setup [editorconfig](http://editorconfig.org/), [ruff](https://github.com/astral-sh/ruff) and [ESLint](http://eslint.org/) in the text editor you will use to develop.
