@@ -3,6 +3,12 @@ ARG := $(word 2, $(MAKECMDGOALS) )
 
 .DEFAULT_GOAL := help
 
+.PHONY: setup
+setup: ## Set up initial files
+	cp -v --update=none backend/.env.example backend/.env
+	cp -v --update=none backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
+
+
 .PHONY: help
 help: ## Show this help message
 	@# https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

@@ -17,11 +17,7 @@
 
 ### Setup
 
--   Do the following:
-    -   Create a git-untracked `local.py` settings file:
-        `cp backend/{{project_name}}/settings/local.py.example backend/{{project_name}}/settings/local.py`
-    -   Create a git-untracked `.env.example` file:
-        `cp backend/.env.example backend/.env`
+-   Run `make setup`. This will set up some required files for you
 
 ### If you are using Docker:
 
