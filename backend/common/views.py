@@ -18,6 +18,7 @@ class RestViewSet(viewsets.ViewSet):
         url_path="rest-check",
     )
     def rest_check(self, request):
+        """This is a basic call to check that the REST API is working"""
         return Response(
             {
                 "result": "This message comes from the backend. "
@@ -25,3 +26,10 @@ class RestViewSet(viewsets.ViewSet):
             },
             status=status.HTTP_200_OK,
         )
+
+
+class BrainViewSet(viewsets.ViewSet):
+    @action(detail=False, methods=["post"], permission_classes=[AllowAny], url_path="results")
+    def results(self, request, guid: str):
+        """This executes the brain and then fetches the results"""
+        return Response({"result": "OK"}, status=status.HTTP_200_OK)
