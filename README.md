@@ -2,6 +2,15 @@
 
 ## Running
 
+- Brainwave Website: http://localhost:8000
+- Brainwave API Documentation:
+    - Swagger:
+        - Web version: http://localhost:8000/api/swagger/
+        - JSON: http://localhost:8000/api/swagger.json
+        - YAML: http://localhost:8000/api/swagger.yaml
+    - Redoc:
+        - http://localhost:8000/api/redoc/
+
 ### Tools
 
 -   Setup [editorconfig](http://editorconfig.org/), [ruff](https://github.com/astral-sh/ruff) and [ESLint](http://eslint.org/) in the text editor you will use to develop.
@@ -9,6 +18,8 @@
 ### Setup
 
 -   Do the following:
+    -   Create a git-untracked `local.py` settings file:
+        `cp backend/{{project_name}}/settings/local.py.example backend/{{project_name}}/settings/local.py`
     -   Create a git-untracked `.env.example` file:
         `cp backend/.env.example backend/.env`
 
@@ -34,9 +45,10 @@
 
 -   Open a new command line window and go to the project's directory
 -   Update the dependencies management files by performing any number of the following steps:
-    -   To add a new **frontend** dependency, run `npm install <package name> --save`
+    -   To add a new **frontend** dependency, run `make docker_frontend` to open an interactive shell and then run `npm install <package name> --save` to add the dependency
         > The above command will update your `package.json`, but won't make the change effective inside the container yet
-    -   To add a new **backend** dependency, run `docker compose run backend --rm bash` to open an interactive shell and then run `poetry add {dependency}` to add the dependency. If the dependency should be only available for development user append `-G dev` to the command.
+    -   To add a new **backend** dependency, run `make docker_backend` to open an interactive shell and then run `poetry add {dependency}` to add the dependency. If the dependency should be only available for development user append `-G dev` to the command.
+        > The above command will update your `pyproject.toml`, but won't make the change effective inside the container yet
     -   After updating the desired file(s), run `make docker_update_dependencies` to update the containers with the new dependencies
         > The above command will stop and re-build the containers in order to make the new dependencies effective
 
@@ -76,7 +88,7 @@
 
 `make test` or `make docker_test` (depending on if you are using docker or not)
 
-Will run django tests using `--keepdb` and `--parallel`. You may pass a path to the desired test module in the make command. E.g.:
+You may pass a path to the desired test module in the make command. E.g.:
 
 `make test someapp.tests.test_views`
 

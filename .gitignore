@@ -8,6 +8,7 @@ db.sqlite3-journal
 /mediafiles/*
 __pycache__/
 /.vscode/
+poetry.lock
 
 # coverage result
 .coverage
