@@ -42,4 +42,11 @@ repos:
             name: missing-migrations-local
             entry: make precommit_missing_migrations
             language: system
+            # Only run missing migration check if migration-generating files have changed:
+            files: (.*/?(settings|migrations|models)/.+|.+models\.py|.+constants\.py|.+choices\.py|.+pyproject\.toml)
+            pass_filenames: false
+          - id: update-neuron-docs
+            name: update-neuron-docs-local
+            entry: make precommit_update_neuron_docs
+            language: system
             pass_filenames: false
