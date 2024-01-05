@@ -77,3 +77,22 @@ docker_frontend: ## Access the bash shell for the frontend
 .PHONY: docker_backend
 docker_backend: ## Access the bash shell for the backend
 	docker-compose run --rm backend bash
+
+# Commands for pre-commit (both local and docker versions)
+.PHONY: precommit_eslint precommit_eslint_docker
+precommit_eslint:
+	npm run lint
+precommit_eslint_docker:
+	docker-compose run -T frontend npm run lint
+
+.PHONY: precommit_missing_migrations precommit_missing_migrations_docker
+precommit_missing_migrations:
+	poetry run python backend/manage.py makemigrations --check
+precommit_missing_migrations_docker:
+	docker-compose run -T backend python manage.py makemigrations --check
+
+.PHONY: precommit_update_neuron_docs precommit_update_neuron_docs_docker
+precommit_update_neuron_docs:
+	poetry run python backend/services/neurons/_mkdoc.py backend/services/neurons backend/services/neurons/README.md
+precommit_update_neuron_docs_docker:
+	docker-compose run -T backend python services/neurons/_mkdoc.py services/neurons services/neurons/README.md
