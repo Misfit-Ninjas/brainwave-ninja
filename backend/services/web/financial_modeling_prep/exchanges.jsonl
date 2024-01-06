@@ -1,0 +1,56 @@
+{"country": " United States of America", "name": "American Stock Exchange", "FMP": ["ASE", "AMEX"]}
+{"country": " United States of America", "name": "BATS Global Markets", "FMP": ["ETF"]}
+{"country": " United States of America", "name": "NASDAQ", "FMP": ["NASDAQ"]}
+{"country": " United States of America", "name": "New York Stock Exchange", "FMP": ["NYSE"]}
+{"country": "Argentina", "name": "Buenos Aires Stock Exchange", "FMP": ["BUE"]}
+{"country": "Austrailia", "name": "Australian Securities Exchange", "FMP": ["ASX"]}
+{"country": "Brazil", "name": "São Paulo Stock Exchange", "FMP": ["SAO"]}
+{"country": "Canada", "name": "Canadian Securities Exchange", "FMP": ["CNQ"]}
+{"country": "Canada", "name": "NEO Exchange", "FMP": ["NEO"]}
+{"country": "Canada", "name": "Toronto Stock Exchange", "FMP": ["TSX"]}
+{"country": "Chile", "name": "Santiago Stock Exchange", "FMP": ["SGO"]}
+{"country": "China", "name": "Hong Kong Stock Exchange", "FMP": ["HKSE"]}
+{"country": "China", "name": "Shanghai Stock Exchange", "FMP": ["SHH"]}
+{"country": "China", "name": "Shenzhen Stock Exchange", "FMP": ["SHZ"]}
+{"country": "Czech Republic", "name": "Prague Stock Exchange", "FMP": ["PRA"]}
+{"country": "Denmark", "name": "Nasdaq Copenhagen", "FMP": ["CPH"]}
+{"country": "Egypt", "name": "The Egyptian Exchange", "FMP": ["CAI"]}
+{"country": "England", "name": "International Order Book", "FMP": ["IOB"]}
+{"country": "England", "name": "London Stock Exchange", "FMP": ["LSE"]}
+{"country": "Finland", "name": "Nasdaq Helsinki", "FMP": ["HEL"]}
+{"country": "Germany", "name": "XETRA Stock Exchange", "FMP": ["XETRA"]}
+{"country": "Germany", "name": "Hamburg Stock Exchange", "FMP": ["HAM"]}
+{"country": "Greece", "name": "Athens Stock Exchange", "FMP": ["ATH"]}
+{"country": "Hungary", "name": "Budapest Stock Exchange", "FMP": ["BUD"]}
+{"country": "Iceland", "name": "Iceland Stock Exchange", "FMP": ["ICE"]}
+{"country": "India", "name": "Bombay Stock Exchange", "FMP": ["NSE", "BSE"]}
+{"country": "Indonesia", "name": "Jakarta Stock Exchange", "FMP": ["JKT"]}
+{"country": "Israel", "name": "Tel Aviv", "FMP": ["TLV"]}
+{"country": "Italy", "name": "Milan Stock Exchange", "FMP": ["MIL"]}
+{"country": "Japan", "name": "Tokyo Stock Exchange", "FMP": ["JPX"]}
+{"country": "Kuwait", "name": "Boursa Kuwait", "FMP": ["KUW"]}
+{"country": "Latvia", "name": "Nasdaq Riga", "FMP": ["RIS"]}
+{"country": "Malaysia", "name": "Bursa Malaysia", "FMP": ["KLS"]}
+{"country": "Mexico", "name": "Bolsa Mexicana de Valores", "FMP": ["MEX"]}
+{"country": "New Zealand", "name": "New Zealand Exchange", "FMP": ["NZE"]}
+{"country": "Norway", "name": "Oslo Stock Exchange", "FMP": ["OSL"]}
+{"country": "Pakistan", "name": "Pakistan Stock Exchange", "FMP": ["KSC"]}
+{"country": "Poland", "name": "Warsaw Stock Exchange", "FMP": ["WSE"]}
+{"country": "Qatar", "name": "Qatar Stock Exchange", "FMP": ["DOH"]}
+{"country": "Saudi Arabia", "name": "Saudi Stock Exchange", "FMP": ["SAU"]}
+{"country": "Singapore", "name": "Stock Exchange of Singapore", "FMP": ["SES"]}
+{"country": "South Africa", "name": "Johannesburg Stock Exchange", "FMP": ["JNB"]}
+{"country": "South Korea", "name": "KOSDAQ", "FMP": ["KOE"]}
+{"country": "Spain", "name": "Madrid Stock Exchange", "FMP": ["BME"]}
+{"country": "Sweden", "name": "Nasdaq Stockholm", "FMP": ["STO"]}
+{"country": "Switzerland", "name": "Swiss Exchange", "FMP": ["SIX"]}
+{"country": "Taiwan", "name": "Taipei Exchange", "FMP": ["TWO"]}
+{"country": "Taiwan", "name": "Taiwan Stock Exchange", "FMP": ["TAI"]}
+{"country": "Thailand", "name": "Stock Exchange of Thailand", "FMP": ["SET"]}
+{"country": "Turkey", "name": "Istanbul Stock Exchange", "FMP": ["IST"]}
+{"country": "United Arab Emirates", "name": "Dubai Stock Exchange", "FMP": ["DFM"]}
+{"country": "Vienna", "name": "Vienna Stock Exchange", "FMP": ["VIE"]}
+{"country": "~N/A", "name": "??", "FMP": ["BRU", "ISE"]}
+{"country": "~N/A", "name": "Euronext", "FMP": ["EURONEXT"]}
+{"country": "~N/A", "name": "Cboe Stock Exchange", "FMP": ["CBOE"]}
+{"country": "~N/A", "name": "Over-the-counter", "FMP": ["PNK", "OTC"]}

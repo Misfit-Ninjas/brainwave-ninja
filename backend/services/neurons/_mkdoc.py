@@ -2,10 +2,15 @@ import dataclasses
 import hashlib
 import importlib
 import inspect
+import pathlib
 import pkgutil
 import re
+import sys
 
 import click
+
+
+sys.path.append(str(pathlib.Path(__file__).parent.parent.parent))  # Add backend root directory
 
 
 @click.command()

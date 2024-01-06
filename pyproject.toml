@@ -8,9 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+
+# Django is our web server
 Django = "^5.0"
-celery = {extras = ["redis"], version = "^5.3.6"}
-celery-redbeat = "^2.1.1"
 django-model-utils = "^4.3.1"
 django-webpack-loader = "^3.0.0"
 django-js-reverse = "^0.10.2"
@@ -18,25 +18,43 @@ django-import-export = "^3.3.5"
 djangorestframework = "^3.14.0"
 django-debreach = "^2.1.0"
 python-decouple = "^3.8"
-psycopg2 = "^2.9.9"
 brotlipy = "^0.7.0"
 django-log-request-id = "^2.1.0"
-dj-database-url = "^2.1.0"
 gunicorn = "^21.2.0"
 whitenoise = "^6.6.0"
+drf-yasg = "^1.21.7"
+
+# Celery is our job queue
+celery = {extras = ["redis"], version = "^5.3.6"}
+celery-redbeat = "^2.1.1"
+
+# Database imports
+psycopg2 = "^2.9.9"
+dj-database-url = "^2.1.0"
+
+# Packaging / command imports
 psutil = "^5.9.7"
-ipython = "^8.18.1"
 sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
-drf-yasg = "^1.21.7"
+click = "^8.1.7"
+
+# Data imports
+pandas = "^2.1.4"
+jsonlines = "^4.0.0"
+pandera = "^0.18.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
+ipython = "^8.18.1"
 model-bakery = "^1.12.0"
 pre-commit = "^3.3.3"
 pylint-django = "^2.5.3"
-ruff = "^0.1.8"
+pytest = "^7.4.4"
 pytest-django = "^4.7.0"
+pytest-mock = "^3.12.0"
+pytest-sugar = "^0.9.7"
+pytest-watcher = "^0.3.4"
+ruff = "^0.1.8"
 
 [build-system]
 requires = ["poetry-core>=1.2.0"]

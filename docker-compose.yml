@@ -37,6 +37,7 @@ services:
     volumes:
       - ./:/home/user/app/
     env_file: backend/.env
+    user: ${UGID:-}
     depends_on:
       - db
       - broker

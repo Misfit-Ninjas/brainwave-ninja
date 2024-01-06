@@ -1,0 +1,145 @@
+{"sector": "Basic Materials", "industry": "Agricultural Inputs"}
+{"sector": "Basic Materials", "industry": "Aluminum"}
+{"sector": "Basic Materials", "industry": "Building Materials"}
+{"sector": "Basic Materials", "industry": "Chemicals"}
+{"sector": "Basic Materials", "industry": "Coking Coal"}
+{"sector": "Basic Materials", "industry": "Gold"}
+{"sector": "Basic Materials", "industry": "Lumber & Wood Production"}
+{"sector": "Basic Materials", "industry": "Other Industrial Metals & Mining"}
+{"sector": "Basic Materials", "industry": "Other Precious Metals & Mining"}
+{"sector": "Basic Materials", "industry": "Paper & Paper Products"}
+{"sector": "Basic Materials", "industry": "Silver"}
+{"sector": "Basic Materials", "industry": "Specialty Chemicals"}
+{"sector": "Basic Materials", "industry": "Steel"}
+{"sector": "Communication Services", "industry": "Advertising Agencies"}
+{"sector": "Communication Services", "industry": "Broadcasting"}
+{"sector": "Communication Services", "industry": "Electronic Gaming & Multimedia"}
+{"sector": "Communication Services", "industry": "Entertainment"}
+{"sector": "Communication Services", "industry": "Internet Content & Information"}
+{"sector": "Communication Services", "industry": "Publishing"}
+{"sector": "Communication Services", "industry": "Telecom Services"}
+{"sector": "Consumer Cyclical", "industry": "Apparel Manufacturing"}
+{"sector": "Consumer Cyclical", "industry": "Apparel Retail"}
+{"sector": "Consumer Cyclical", "industry": "Auto & Truck Dealerships"}
+{"sector": "Consumer Cyclical", "industry": "Auto Manufacturers"}
+{"sector": "Consumer Cyclical", "industry": "Auto Parts"}
+{"sector": "Consumer Cyclical", "industry": "Footwear & Accessories"}
+{"sector": "Consumer Cyclical", "industry": "Furnishings, Fixtures & Appliances"}
+{"sector": "Consumer Cyclical", "industry": "Gambling"}
+{"sector": "Consumer Cyclical", "industry": "Home Improvement Retail"}
+{"sector": "Consumer Cyclical", "industry": "Homebuilding & Construction"}
+{"sector": "Consumer Cyclical", "industry": "Internet Retail"}
+{"sector": "Consumer Cyclical", "industry": "Leisure"}
+{"sector": "Consumer Cyclical", "industry": "Lodging"}
+{"sector": "Consumer Cyclical", "industry": "Luxury Goods"}
+{"sector": "Consumer Cyclical", "industry": "Packaging & Containers"}
+{"sector": "Consumer Cyclical", "industry": "Personal Services"}
+{"sector": "Consumer Cyclical", "industry": "Recreational Vehicles"}
+{"sector": "Consumer Cyclical", "industry": "Residential Construction"}
+{"sector": "Consumer Cyclical", "industry": "Resorts & Casinos"}
+{"sector": "Consumer Cyclical", "industry": "Restaurants"}
+{"sector": "Consumer Cyclical", "industry": "Specialty Retail"}
+{"sector": "Consumer Cyclical", "industry": "Textile Manufacturing"}
+{"sector": "Consumer Cyclical", "industry": "Travel Services"}
+{"sector": "Consumer Defensive", "industry": "Beverages—Non-Alcoholic"}
+{"sector": "Consumer Defensive", "industry": "Beverages—Wineries & Distilleries"}
+{"sector": "Consumer Defensive", "industry": "Confectioners"}
+{"sector": "Consumer Defensive", "industry": "Discount Stores"}
+{"sector": "Consumer Defensive", "industry": "Education & Training Services"}
+{"sector": "Consumer Defensive", "industry": "Farm Products"}
+{"sector": "Consumer Defensive", "industry": "Food Distribution"}
+{"sector": "Consumer Defensive", "industry": "Grocery Stores"}
+{"sector": "Consumer Defensive", "industry": "Household & Personal Products"}
+{"sector": "Consumer Defensive", "industry": "Packaged Foods"}
+{"sector": "Consumer Defensive", "industry": "Tobacco"}
+{"sector": "Energy", "industry": "Oil & Gas Drilling"}
+{"sector": "Energy", "industry": "Oil & Gas E&P"}
+{"sector": "Energy", "industry": "Oil & Gas Equipment & Services"}
+{"sector": "Energy", "industry": "Oil & Gas Integrated"}
+{"sector": "Energy", "industry": "Oil & Gas Midstream"}
+{"sector": "Energy", "industry": "Oil & Gas Refining & Marketing"}
+{"sector": "Energy", "industry": "Thermal Coal"}
+{"sector": "Energy", "industry": "Uranium"}
+{"sector": "Financial Services", "industry": "Asset Management"}
+{"sector": "Financial Services", "industry": "Banks—Diversified"}
+{"sector": "Financial Services", "industry": "Banks—Regional"}
+{"sector": "Financial Services", "industry": "Capital Markets"}
+{"sector": "Financial Services", "industry": "Credit Services"}
+{"sector": "Financial Services", "industry": "Financial Conglomerates"}
+{"sector": "Financial Services", "industry": "Financial Data & Stock Exchanges"}
+{"sector": "Financial Services", "industry": "Insurance Brokers"}
+{"sector": "Financial Services", "industry": "Insurance—Diversified"}
+{"sector": "Financial Services", "industry": "Insurance—Life"}
+{"sector": "Financial Services", "industry": "Insurance—Property & Casualty"}
+{"sector": "Financial Services", "industry": "Insurance—Reinsurance"}
+{"sector": "Financial Services", "industry": "Insurance—Specialty"}
+{"sector": "Financial Services", "industry": "Mortgage Finance"}
+{"sector": "Financial Services", "industry": "Shell Companies"}
+{"sector": "Financials", "industry": "Investment Holding Companies"}
+{"sector": "Healthcare", "industry": "Biotechnology"}
+{"sector": "Healthcare", "industry": "Diagnostics & Research"}
+{"sector": "Healthcare", "industry": "Drug Manufacturers—General"}
+{"sector": "Healthcare", "industry": "Drug Manufacturers—Specialty & Generic"}
+{"sector": "Healthcare", "industry": "Health Information Services"}
+{"sector": "Healthcare", "industry": "Healthcare Plans"}
+{"sector": "Healthcare", "industry": "Medical Care Facilities"}
+{"sector": "Healthcare", "industry": "Medical Devices"}
+{"sector": "Healthcare", "industry": "Medical Distribution"}
+{"sector": "Healthcare", "industry": "Medical Instruments & Supplies"}
+{"sector": "Healthcare", "industry": "Pharmaceutical Retailers"}
+{"sector": "Healthcare", "industry": "Pharmaceuticals"}
+{"sector": "Industrials", "industry": "Aerospace & Defense"}
+{"sector": "Industrials", "industry": "Airlines"}
+{"sector": "Industrials", "industry": "Airports & Air Services"}
+{"sector": "Industrials", "industry": "Building Products & Equipment"}
+{"sector": "Industrials", "industry": "Conglomerates"}
+{"sector": "Industrials", "industry": "Consulting Services"}
+{"sector": "Industrials", "industry": "Electrical Equipment & Parts"}
+{"sector": "Industrials", "industry": "Engineering & Construction"}
+{"sector": "Industrials", "industry": "Farm & Heavy Construction Machinery"}
+{"sector": "Industrials", "industry": "Industrial Distribution"}
+{"sector": "Industrials", "industry": "Infrastructure Operations"}
+{"sector": "Industrials", "industry": "Integrated Freight & Logistics"}
+{"sector": "Industrials", "industry": "Marine Shipping"}
+{"sector": "Industrials", "industry": "Metal Fabrication"}
+{"sector": "Industrials", "industry": "Pollution & Treatment Controls"}
+{"sector": "Industrials", "industry": "Railroads"}
+{"sector": "Industrials", "industry": "Rental & Leasing Services"}
+{"sector": "Industrials", "industry": "Security & Protection Services"}
+{"sector": "Industrials", "industry": "Specialty Business Services"}
+{"sector": "Industrials", "industry": "Specialty Industrial Machinery"}
+{"sector": "Industrials", "industry": "Staffing & Employment Services"}
+{"sector": "Industrials", "industry": "Tools & Accessories"}
+{"sector": "Industrials", "industry": "Trucking"}
+{"sector": "Industrials", "industry": "Waste Management"}
+{"sector": "Real Estate", "industry": "REIT—Diversified"}
+{"sector": "Real Estate", "industry": "REIT—Healthcare Facilities"}
+{"sector": "Real Estate", "industry": "REIT—Hotel & Motel"}
+{"sector": "Real Estate", "industry": "REIT—Industrial"}
+{"sector": "Real Estate", "industry": "REIT—Mortgage"}
+{"sector": "Real Estate", "industry": "REIT—Retail"}
+{"sector": "Real Estate", "industry": "REIT—Specialty"}
+{"sector": "Real Estate", "industry": "Real Estate - Development"}
+{"sector": "Real Estate", "industry": "Real Estate Services"}
+{"sector": "Real Estate", "industry": "Real Estate—Development"}
+{"sector": "Real Estate", "industry": "Real Estate—Diversified"}
+{"sector": "Technology", "industry": "Communication Equipment"}
+{"sector": "Technology", "industry": "Computer Hardware"}
+{"sector": "Technology", "industry": "Consumer Electronics"}
+{"sector": "Technology", "industry": "Electronic Components"}
+{"sector": "Technology", "industry": "Electronics & Computer Distribution"}
+{"sector": "Technology", "industry": "Information Technology Services"}
+{"sector": "Technology", "industry": "Scientific & Technical Instruments"}
+{"sector": "Technology", "industry": "Semiconductor Equipment & Materials"}
+{"sector": "Technology", "industry": "Semiconductors"}
+{"sector": "Technology", "industry": "Software & IT Services"}
+{"sector": "Technology", "industry": "Software - Application"}
+{"sector": "Technology", "industry": "Software - Infrastructure"}
+{"sector": "Technology", "industry": "Software—Application"}
+{"sector": "Technology", "industry": "Software—Infrastructure"}
+{"sector": "Technology", "industry": "Solar"}
+{"sector": "Utilities", "industry": "Utilities—Diversified"}
+{"sector": "Utilities", "industry": "Utilities—Regulated Electric"}
+{"sector": "Utilities", "industry": "Utilities—Regulated Gas"}
+{"sector": "Utilities", "industry": "Utilities—Regulated Water"}
+{"sector": "Utilities", "industry": "Utilities—Renewable"}
