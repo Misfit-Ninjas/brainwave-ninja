@@ -3,7 +3,7 @@ import pytest
 from backend.services.neurons.financial import symbols
 
 
-class TestRunSymbols:
+class TestRunFinancialSymbols:
     @pytest.fixture
     def stock_results(self):
         return [
