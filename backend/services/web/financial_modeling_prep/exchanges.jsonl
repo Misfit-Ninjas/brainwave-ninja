@@ -1,7 +1,7 @@
-{"country": " United States of America", "name": "American Stock Exchange", "FMP": ["ASE", "AMEX"]}
-{"country": " United States of America", "name": "BATS Global Markets", "FMP": ["ETF"]}
-{"country": " United States of America", "name": "NASDAQ", "FMP": ["NASDAQ"]}
-{"country": " United States of America", "name": "New York Stock Exchange", "FMP": ["NYSE"]}
+{"country": "United States of America", "name": "American Stock Exchange", "FMP": ["ASE", "AMEX"]}
+{"country": "United States of America", "name": "BATS Global Markets", "FMP": ["ETF"]}
+{"country": "United States of America", "name": "NASDAQ", "FMP": ["NASDAQ"]}
+{"country": "United States of America", "name": "New York Stock Exchange", "FMP": ["NYSE"]}
 {"country": "Argentina", "name": "Buenos Aires Stock Exchange", "FMP": ["BUE"]}
 {"country": "Austrailia", "name": "Australian Securities Exchange", "FMP": ["ASX"]}
 {"country": "Brazil", "name": "São Paulo Stock Exchange", "FMP": ["SAO"]}
