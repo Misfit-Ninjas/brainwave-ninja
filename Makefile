@@ -5,9 +5,9 @@ ARG := $(word 2, $(MAKECMDGOALS) )
 
 .PHONY: setup
 setup: ## Set up initial files
-	cp -v --update=none backend/.env.example backend/.env
-	cp -v --update=none backend/services/web/.env.example backend/services/web/.env
-	cp -v --update=none backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
+	test -f backend/.env || cp -v backend/.env.example backend/.env
+	test -f backend/services/web/.env || cp -v backend/services/web/.env.example backend/services/web/.env
+	test -f backend/brainwave/settings/local.py || cp -v backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
 
 
 .PHONY: help
