@@ -3,6 +3,10 @@ import pytest
 from backend.services.neurons.financial import symbols
 
 
+# Note for future self when we want to start cashing def funcname(self, parameter_list):
+# https://stackoverflow.com/questions/16463582/memoize-to-disk-python-persistent-memoization
+
+
 class TestRunFinancialSymbols:
     @pytest.fixture
     def stock_results(self):

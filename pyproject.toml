@@ -28,20 +28,24 @@ drf-yasg = "^1.21.7"
 celery = {extras = ["redis"], version = "^5.3.6"}
 celery-redbeat = "^2.1.1"
 
-# Database imports
+# Database stuff
 psycopg2 = "^2.9.9"
 dj-database-url = "^2.1.0"
 
-# Packaging / command imports
+# Packaging / command stuff
 psutil = "^5.9.7"
 sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
 click = "^8.1.7"
 
-# Data imports
+# Data stuff
 pandas = "^2.1.4"
 jsonlines = "^4.0.0"
 pandera = "^0.18.0"
+
+# Stuff for web requests
+requests = "^2.31.0"
+requests_ratelimiter = "^0.4.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
@@ -54,6 +58,7 @@ pytest-django = "^4.7.0"
 pytest-mock = "^3.12.0"
 pytest-sugar = "^0.9.7"
 pytest-watcher = "^0.3.4"
+pytest_httpserver = "^1.0.8"
 ruff = "^0.1.8"
 
 [build-system]

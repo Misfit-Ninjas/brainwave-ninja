@@ -6,6 +6,7 @@ ARG := $(word 2, $(MAKECMDGOALS) )
 .PHONY: setup
 setup: ## Set up initial files
 	cp -v --update=none backend/.env.example backend/.env
+	cp -v --update=none services/web/.env.example services/web/.env
 	cp -v --update=none backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
 
 
@@ -35,7 +36,7 @@ docker_setup: ## Do initial Docker setup
 	docker-compose run frontend npm install
 
 .PHONY: lint
-lint: ## Perform linting (using Docker)
+lint: ## Perform linting
 	npm run lint
 	poetry run ruff check --fix
 	poetry run ruff format
