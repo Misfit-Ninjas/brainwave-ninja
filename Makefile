@@ -6,7 +6,7 @@ ARG := $(word 2, $(MAKECMDGOALS) )
 .PHONY: setup
 setup: ## Set up initial files
 	cp -v --update=none backend/.env.example backend/.env
-	cp -v --update=none services/web/.env.example services/web/.env
+	cp -v --update=none backend/services/web/.env.example backend/services/web/.env
 	cp -v --update=none backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
 
 
@@ -99,7 +99,7 @@ precommit_missing_migrations_docker:
 	docker-compose run -T backend python manage.py makemigrations --check
 
 .PHONY: precommit_update_neuron_docs precommit_update_neuron_docs_docker
-precommit_update_neuron_docs:
+precommit_update_neuron_docs: setup
 	poetry run python backend/services/neurons/_mkdoc.py backend/services/neurons backend/services/neurons/README.md
-precommit_update_neuron_docs_docker:
+precommit_update_neuron_docs_docker: setup
 	docker-compose run -T backend python services/neurons/_mkdoc.py services/neurons services/neurons/README.md
