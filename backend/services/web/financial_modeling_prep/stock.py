@@ -1,3 +1,4 @@
+from collections.abc import Iterator
 from typing import TypedDict
 
 from ._base import CONFIG
@@ -23,14 +24,14 @@ class Stock(_Base):
         industry: str | None = None,
         exchange: str | None = None,
         is_actively_trading: bool = True,
-    ) -> list[Results]:
+    ) -> Iterator[Results]:
         # WARNING: The `screener` API call from FPM seems to limit us to ~1k results
         # at a time. This is a known limitation we're accepting for now
 
         if not any([sector, industry, exchange]):
-            return list()
+            return
 
-        payload = dict(apikey=self.api_key, isActivelyTrading="true")
+        payload = dict(isActivelyTrading="true")
         if sector is not None:
             payload["sector"] = sector
         if industry is not None:
@@ -42,8 +43,8 @@ class Stock(_Base):
 
         result = self.get("/api/v3/stock-screener", **payload).json()
 
-        return [
-            {
+        for item in result:
+            yield {
                 "symbol": item["symbol"],
                 "company_name": item["companyName"],
                 "sector": item["sector"],
@@ -54,11 +55,9 @@ class Stock(_Base):
                 "is_etf": item["isEtf"],
                 "is_actively_trading": item["isActivelyTrading"],
             }
-            for item in result
-        ]
 
     def profile(self, symbol: str) -> Results | None:
-        result = self.get(f"/api/v3/profile/{symbol}", apikey=self.api_key).json()
+        result = self.get(f"/api/v3/profile/{symbol}").json()
         if result:
             return {
                 "symbol": result[0]["symbol"],

@@ -1,11 +1,12 @@
 import itertools
+import os
 import pathlib
 
 import jsonlines
 import pandas
 
 
-with jsonlines.open(pathlib.Path(__file__).parent / "exchanges.jsonl") as f:
+with jsonlines.open(pathlib.Path(os.path.realpath(__file__)).parent / "exchanges.jsonl") as f:
     EXCHANGES = pandas.DataFrame(f)
 
 
