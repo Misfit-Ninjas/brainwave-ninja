@@ -39,7 +39,7 @@ class TestRunFinancialSymbols:
     class TestWhenCountryIsGiven:
         def test_it_should_narrow_down_based_on_the_market(self, market_find_all):
             config = symbols.Config(country="United States of America")
-            market_find_all.return_value = ["NASDAQ"]
+            market_find_all.return_value = iter(["NASDAQ"])
             list(symbols.run(config))
             market_find_all.assert_called_once_with(country="United States of America")
 
@@ -58,7 +58,7 @@ class TestRunFinancialSymbols:
             self, stock_find_all, market_find_all, markets, expected_market
         ):
             config = symbols.Config(country="United States of America", market="NASDAQ")
-            market_find_all.return_value = markets
+            market_find_all.return_value = iter(markets)
             list(symbols.run(config))
             if expected_market:
                 stock_find_all.assert_called_once_with(
