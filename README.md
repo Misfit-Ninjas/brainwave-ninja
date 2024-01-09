@@ -106,3 +106,10 @@ To add a new **backend** dependency, run `poetry add {dependency}`. If the depen
     -    On project root, run `pre-commit install --config .pre-commit-config-docker.yaml` to enable the hook into your git repo.
 
 The hook will run automatically for each commit.
+
+## Troubleshooting
+
+- I'm getting `Permission Denied` errors from Docker when trying to write to a file
+> Your user ID and Docker's user ID (`1000`) might be mismatched. Try putting
+> `UGID=<USER_ID>:<GROUP_ID>` in `.env` within your project directory.
+> You can find both IDs by running `id -a` on the command line.

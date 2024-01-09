@@ -5,8 +5,9 @@ ARG := $(word 2, $(MAKECMDGOALS) )
 
 .PHONY: setup
 setup: ## Set up initial files
-	cp -v --update=none backend/.env.example backend/.env
-	cp -v --update=none backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
+	test -f backend/.env || cp -v backend/.env.example backend/.env
+	test -f backend/services/web/.env || cp -v backend/services/web/.env.example backend/services/web/.env
+	test -f backend/brainwave/settings/local.py || cp -v backend/brainwave/settings/local.py.example backend/brainwave/settings/local.py
 
 
 .PHONY: help
@@ -35,7 +36,7 @@ docker_setup: ## Do initial Docker setup
 	docker-compose run frontend npm install
 
 .PHONY: lint
-lint: ## Perform linting (using Docker)
+lint: ## Perform linting
 	npm run lint
 	poetry run ruff check --fix
 	poetry run ruff format
@@ -98,7 +99,7 @@ precommit_missing_migrations_docker:
 	docker-compose run -T backend python manage.py makemigrations --check
 
 .PHONY: precommit_update_neuron_docs precommit_update_neuron_docs_docker
-precommit_update_neuron_docs:
+precommit_update_neuron_docs: setup
 	poetry run python backend/services/neurons/_mkdoc.py backend/services/neurons backend/services/neurons/README.md
-precommit_update_neuron_docs_docker:
+precommit_update_neuron_docs_docker: setup
 	docker-compose run -T backend python services/neurons/_mkdoc.py services/neurons services/neurons/README.md

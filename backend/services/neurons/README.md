@@ -5,3 +5,4 @@
 | `config.future_quarters` | future quarters settings | `number_of_quarters` | `run (config: config.future_quarters.Config) -> config.future_quarters.Config` |
 | `config.global_config` | global settings |  | `run (config: config.global_config.Config) -> None` |
 | `config.machine_learning` | machine learning settings | `forecasting_approach` | `run (config: config.machine_learning.Config) -> config.machine_learning.Config` |
+| `financial.symbols` | fetches stock symbols | `country`, `market`, `sector`, `industry`, `symbol` | `run (config: financial.symbols.Config) -> pandas.core.frame.DataFrame` |
