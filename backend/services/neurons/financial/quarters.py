@@ -1,3 +1,5 @@
+"""Takes in a list of symbols and returns quarters for which financial reports are available"""
+
 from collections.abc import Iterator
 from dataclasses import dataclass
 from typing import TypedDict
