@@ -39,9 +39,7 @@ setuptools = "^69.0.2"
 click = "^8.1.7"
 
 # Data stuff
-pandas = "^2.1.4"
 jsonlines = "^4.0.0"
-pandera = "^0.18.0"
 stringcase = "^1.2.0"
 PyYAML = "^6.0.1"
 
