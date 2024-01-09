@@ -1,5 +1,6 @@
 import os
 import sys
+from typing import cast
 
 from django.apps import apps
 
@@ -17,7 +18,7 @@ if settings_module is None:
         "Check README for more info."
     )
     sys.exit(1)
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", cast(str, settings_module))
 
 app = Celery("brainwave_tasks")
 app.config_from_object("django.conf:settings", namespace="CELERY")

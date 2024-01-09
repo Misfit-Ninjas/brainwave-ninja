@@ -15,9 +15,10 @@ class Base:
     ):
         self.api_key = api_key
         self.api_endpoint = api_endpoint.rstrip("/")
-        self.session = session
 
-        if self.session is None:
+        if session is not None:
+            self.session = session
+        else:
             if session_throttle is None:
                 raise ValueError("Either `session` or `session_limit` must be provided")
             self.session = LimiterSession(session_throttle, limit_statuses=[429, 504])

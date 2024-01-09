@@ -9,7 +9,7 @@ DEBUG = False
 
 SECRET_KEY = config("SECRET_KEY")
 
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
+DATABASES["default"]["ATOMIC_REQUESTS"] = True  # pyright: ignore[reportGeneralTypeIssues]
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 

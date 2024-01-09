@@ -1,4 +1,5 @@
 import os
+from typing import cast
 
 from decouple import config
 from dj_database_url import parse as db_url
@@ -139,8 +140,8 @@ CELERY_ACKS_LATE = True
 CELERY_TIMEZONE = TIME_ZONE
 
 # Sentry
-SENTRY_DSN = config("SENTRY_DSN", default="")
-COMMIT_SHA = config("RENDER_GIT_COMMIT", default="")
+SENTRY_DSN = cast(str, config("SENTRY_DSN", default=""))
+COMMIT_SHA = cast(str, config("RENDER_GIT_COMMIT", default=""))
 
 # Fix for Safari 12 compatibility issues, please check:
 # https://github.com/vintasoftware/safari-samesite-cookie-issue

@@ -38,6 +38,11 @@ repos:
                   \.eslintrc\.js
                 )$
             pass_filenames: true
+          - id: pyright
+            name: pyright-local
+            entry: make precommit_pyright
+            language: system
+            types: [python]
           - id: missing-migrations
             name: missing-migrations-local
             entry: make precommit_missing_migrations

@@ -2,6 +2,7 @@
 
 import os
 import sys
+from typing import cast
 
 from decouple import config
 
@@ -24,7 +25,7 @@ if __name__ == "__main__":
                 "Check README for more info."
             )
             sys.exit(1)
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", cast(str, settings_module))
 
     from django.core.management import execute_from_command_line
 

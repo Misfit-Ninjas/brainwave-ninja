@@ -17,6 +17,9 @@ poetry.lock
 # pycharm
 .idea/
 
+# pyright
+.pyright/
+
 # data
 *.dump
 
