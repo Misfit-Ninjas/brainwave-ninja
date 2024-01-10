@@ -43,6 +43,7 @@ repos:
             entry: make precommit_pyright_docker
             language: system
             types: [python]
+            pass_filenames: false
           - id: missing-migrations
             name: missing-migrations-local
             entry: make precommit_missing_migrations_docker
@@ -54,4 +55,5 @@ repos:
             name: update-neuron-docs-local
             entry: make precommit_update_neuron_docs_docker
             language: system
+            files: (\/services\/neurons\/.*\.py)
             pass_filenames: false
