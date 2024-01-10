@@ -94,7 +94,7 @@ precommit_eslint_docker:
 
 .PHONY: precommit_pyright precommit_pyright_docker
 precommit_pyright:
-	pyright
+	PYRIGHT_PYTHON_DEBUG=1 pyright --verbose
 precommit_pyright_docker:
 	docker-compose run -T backend pyright
 
