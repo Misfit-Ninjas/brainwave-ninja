@@ -1,9 +1,9 @@
 """fetches stock symbols"""
 
+from collections.abc import Iterator
 from dataclasses import dataclass
+from typing import TypedDict
 
-import pandas as pd
-import pandera as pa
 from services.web import financial_modeling_prep as fmp
 
 
@@ -16,7 +16,7 @@ class Config:
     symbol: str | None = None
 
 
-class DataSchema(pa.DataFrameModel):
+class Results(TypedDict):
     symbol: str
     company_name: str
     sector: str
@@ -28,11 +28,13 @@ class DataSchema(pa.DataFrameModel):
     is_actively_trading: bool
 
 
-def run(config: Config) -> pd.DataFrame:
+def run(config: Config) -> Iterator[Results]:
     if config.symbol:
         # If a symbol is given, there's no point continuing
         # with any of the other selectors
-        return pd.DataFrame(fmp.stock.profile(config.symbol))
+        if results := fmp.stock.profile(config.symbol):
+            yield results
+        return
 
     markets = list()
     if config.country:
@@ -41,19 +43,15 @@ def run(config: Config) -> pd.DataFrame:
         # stock exchanges, not stocks with mailing addresses in that country
         markets = fmp.market.find_all(country=config.country)
 
+    # Only continue if the country and market match
     if config.market:
-        # Only continue if the country and market match
         if not (markets := list(set(markets) & {config.market}) if markets else {config.market}):
-            return pd.DataFrame()
+            return
 
-    results = list()
-    kwargs = dict(
-        sector=config.sector if config.sector else None,
-        industry=config.industry if config.industry else None,
-    )
     for market in markets or [None]:  # If markets is not set, just send `None`
         # There can be multiple markets, so we need to loop through and union the results
-        kwargs["exchange"] = market
-        results.extend(fmp.stock.find_all(**kwargs))
-
-    return pd.DataFrame(results)
+        yield from fmp.stock.find_all(
+            sector=config.sector if config.sector else None,
+            industry=config.industry if config.industry else None,
+            exchange=market,
+        )

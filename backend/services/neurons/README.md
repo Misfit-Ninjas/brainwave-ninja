@@ -5,4 +5,5 @@
 | `config.future_quarters` | future quarters settings | `number_of_quarters` | `run (config: config.future_quarters.Config) -> config.future_quarters.Config` |
 | `config.global_config` | global settings |  | `run (config: config.global_config.Config) -> None` |
 | `config.machine_learning` | machine learning settings | `forecasting_approach` | `run (config: config.machine_learning.Config) -> config.machine_learning.Config` |
-| `financial.symbols` | fetches stock symbols | `country`, `market`, `sector`, `industry`, `symbol` | `run (config: financial.symbols.Config) -> pandas.core.frame.DataFrame` |
+| `financial.quarters` | Takes in a list of symbols and returns quarters for which financial reports are available | `start_quarter`, `end_quarter` | `run (config: financial.quarters.Config, symbol_results: collections.abc.Iterator[services.neurons.financial.symbols.Results]) -> collections.abc.Iterator[financial.quarters.Results]` |
+| `financial.symbols` | fetches stock symbols | `country`, `market`, `sector`, `industry`, `symbol` | `run (config: financial.symbols.Config) -> collections.abc.Iterator[financial.symbols.Results]` |

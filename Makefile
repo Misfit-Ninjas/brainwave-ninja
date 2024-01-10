@@ -92,6 +92,12 @@ precommit_eslint:
 precommit_eslint_docker:
 	docker-compose run -T frontend npm run lint
 
+.PHONY: precommit_pyright precommit_pyright_docker
+precommit_pyright:
+	pyright
+precommit_pyright_docker:
+	docker-compose run -T backend pyright
+
 .PHONY: precommit_missing_migrations precommit_missing_migrations_docker
 precommit_missing_migrations:
 	poetry run python backend/manage.py makemigrations --check

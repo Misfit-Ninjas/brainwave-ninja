@@ -38,6 +38,12 @@ repos:
                   \.eslintrc\.js
                 )$
             pass_filenames: true
+          - id: pyright
+            name: pyright-local
+            entry: make precommit_pyright
+            language: system
+            types: [python]
+            pass_filenames: false
           - id: missing-migrations
             name: missing-migrations-local
             entry: make precommit_missing_migrations
@@ -49,4 +55,5 @@ repos:
             name: update-neuron-docs-local
             entry: make precommit_update_neuron_docs
             language: system
+            files: (\/services\/neurons\/.*\.py)
             pass_filenames: false
