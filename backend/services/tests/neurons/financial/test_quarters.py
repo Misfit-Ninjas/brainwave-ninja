@@ -5,7 +5,7 @@ from services.neurons.financial import quarters, symbols
 from services.tests.conftest import Datadir
 
 
-class TestRunFinancialQuarters:
+class TestRun:
     class TestWhenGivenAListOfSymbols:
         def test_it_should_return_the_correct_quarters(self, mocker, test_root):
             datadir_obj = Datadir(

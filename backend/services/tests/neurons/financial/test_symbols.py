@@ -7,7 +7,7 @@ from backend.services.neurons.financial import symbols
 # https://stackoverflow.com/questions/16463582/memoize-to-disk-python-persistent-memoization
 
 
-class TestRunFinancialSymbols:
+class TestRun:
     @pytest.fixture
     def stock_results(self):
         return [

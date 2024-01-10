@@ -19,7 +19,7 @@ def expected_results():
     ]
 
 
-class TestFMPStockFindAll:
+class TestFindAll:
     @pytest.fixture
     def api_results(self, datadir_obj):
         return datadir_obj.load("stock-screener.json")
@@ -144,7 +144,7 @@ class TestFMPStockFindAll:
             httpserver.check_assertions()
 
 
-class TestFMPStockProfile:
+class TestProfile:
     @pytest.fixture
     def stock(self, httpserver):
         return stock.Stock(

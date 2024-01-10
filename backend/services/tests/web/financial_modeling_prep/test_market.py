@@ -1,7 +1,7 @@
 from services.web.financial_modeling_prep import market
 
 
-class TestFMPMarketFindAll:
+class TestFindAll:
     class TestWhenAValidCountryIsPassedIn:
         def test_it_should_return_a_list_of_FMP_markets(self):
             result = market.find_all("United States of America")
