@@ -42,6 +42,8 @@ click = "^8.1.7"
 jsonlines = "^4.0.0"
 stringcase = "^1.2.0"
 PyYAML = "^6.0.1"
+polars = "^0.20.3"
+more-itertools = "^10.1.0"
 
 # Stuff for web requests
 requests = "^2.31.0"
@@ -61,6 +63,7 @@ pytest-sugar = "^0.9.7"
 pytest-watcher = "^0.3.4"
 ruff = "^0.1.8"
 pyright = "^1.1.345"
+ipdb = "^0.13.13"
 
 [build-system]
 requires = ["poetry-core>=1.2.0"]

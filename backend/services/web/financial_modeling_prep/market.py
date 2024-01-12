@@ -1,16 +1,14 @@
+import itertools
 import os
 import pathlib
-from collections.abc import Iterator
 
 import jsonlines
+import polars as pl
 
 
 with jsonlines.open(pathlib.Path(os.path.realpath(__file__)).parent / "exchanges.jsonl") as f:
-    EXCHANGES = list(f)
+    EXCHANGES = pl.DataFrame(f)
 
 
-def find_all(country: str) -> Iterator[str]:
-    country = country.strip()
-    for exchange in EXCHANGES:
-        if exchange["country"] == country:
-            yield from exchange["FMP"]
+def find_all(country: str) -> list[str]:
+    return list(itertools.chain(*EXCHANGES.filter(pl.col("country") == country)["FMP"].to_list()))

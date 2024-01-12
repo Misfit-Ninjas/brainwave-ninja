@@ -1,22 +1,25 @@
 import pytest
+from polars.testing import assert_frame_equal
 from services.web.financial_modeling_prep import stock
 
 
 @pytest.fixture
 def expected_results():
-    return [
-        {
-            "symbol": "AAPL",
-            "company_name": "Apple Inc.",
-            "sector": "Technology",
-            "industry": "Consumer Electronics",
-            "exchange": "NASDAQ Global Select",
-            "exchange_short_name": "NASDAQ",
-            "country": "US",
-            "is_etf": False,
-            "is_actively_trading": True,
-        }
-    ]
+    return stock.DataSchema.DataFrame(
+        [
+            {
+                "symbol": "AAPL",
+                "company_name": "Apple Inc.",
+                "sector": "Technology",
+                "industry": "Consumer Electronics",
+                "exchange": "NASDAQ Global Select",
+                "exchange_short_name": "NASDAQ",
+                "country": "US",
+                "is_etf": False,
+                "is_actively_trading": True,
+            }
+        ],
+    )
 
 
 class TestFindAll:
@@ -44,12 +47,12 @@ class TestFindAll:
                 method="GET",
             ).respond_with_json(api_results)
 
-            results = list(stock.find_all(sector="Technology"))
-            assert results == expected_results
+            results = stock.find_all(sector="Technology")
+            assert_frame_equal(results, expected_results)
             httpserver.check_assertions()
 
         def test_it_should_ignore_a_value_of_None(self, stock, httpserver):
-            list(stock.find_all(sector=None))
+            stock.find_all(sector=None)
             # Validate no requests have been made
             httpserver.check_assertions()
 
@@ -59,8 +62,7 @@ class TestFindAll:
                 query_string=dict(base_http_req, sector="raisins"),
                 method="GET",
             ).respond_with_json([])
-            results = list(stock.find_all(sector="raisins"))
-            assert results == []
+            assert stock.find_all(sector="raisins").is_empty()
             httpserver.check_assertions()
 
     class TestWhenIndustryIsSpecified:
@@ -74,12 +76,12 @@ class TestFindAll:
             ).respond_with_json(api_results)
 
             print(httpserver.format_matchers())
-            results = list(stock.find_all(industry="Consumer Electronics"))
-            assert results == expected_results
+            results = stock.find_all(industry="Consumer Electronics")
+            assert_frame_equal(results, expected_results)
             httpserver.check_assertions()
 
         def test_it_should_ignore_a_value_of_None(self, stock, httpserver):
-            list(stock.find_all(sector=None))
+            stock.find_all(sector=None)
             # Validate no requests have been made
             httpserver.check_assertions()
 
@@ -89,8 +91,7 @@ class TestFindAll:
                 query_string=dict(base_http_req, sector="raisins"),
                 method="GET",
             ).respond_with_json([])
-            results = list(stock.find_all(sector="raisins"))
-            assert results == []
+            assert stock.find_all(sector="raisins").is_empty()
             httpserver.check_assertions()
 
     class TestWhenExchangeIsSpecified:
@@ -103,12 +104,12 @@ class TestFindAll:
                 method="GET",
             ).respond_with_json(api_results)
 
-            results = list(stock.find_all(exchange="NASDAQ"))
-            assert results == expected_results
+            results = stock.find_all(exchange="NASDAQ")
+            assert_frame_equal(results, expected_results)
             httpserver.check_assertions()
 
         def test_it_should_ignore_a_value_of_None(self, stock, httpserver):
-            list(stock.find_all(exchange=None))
+            stock.find_all(exchange=None)
             # Validate no requests have been made
             httpserver.check_assertions()
 
@@ -118,8 +119,7 @@ class TestFindAll:
                 query_string=dict(base_http_req, exchange="raisins"),
                 method="GET",
             ).respond_with_json([])
-            results = list(stock.find_all(exchange="raisins"))
-            assert results == []
+            assert stock.find_all(exchange="raisins").is_empty()
             httpserver.check_assertions()
 
     class TestWhenIsActivelyTradingSpecified:
@@ -130,7 +130,7 @@ class TestFindAll:
                 method="GET",
             ).respond_with_json([])
 
-            list(stock.find_all())
+            stock.find_all()
             httpserver.check_assertions()
 
         def test_it_should_accept_false(self, stock, base_http_req, httpserver):
@@ -140,7 +140,7 @@ class TestFindAll:
                 method="GET",
             ).respond_with_json([])
 
-            list(stock.find_all(sector="raisins", is_actively_trading=False))
+            stock.find_all(sector="raisins", is_actively_trading=False)
             httpserver.check_assertions()
 
 
@@ -166,7 +166,7 @@ class TestProfile:
             ).respond_with_json(api_results)
             results = stock.profile(symbol="AAPL")
             print(httpserver.format_matchers())
-            assert results == expected_results[0]
+            assert_frame_equal(results, expected_results)
             httpserver.check_assertions()
 
         def test_it_should_handle_empty_responses(self, stock, httpserver):
@@ -175,6 +175,5 @@ class TestProfile:
                 query_string=dict(apikey="1234567890"),
                 method="GET",
             ).respond_with_json([])
-            results = stock.profile(symbol="raisins")
-            assert results is None
+            assert stock.profile(symbol="raisins").is_empty()
             httpserver.check_assertions()
