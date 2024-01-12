@@ -41,6 +41,7 @@ def run(
 
     symbols = set()
     for symbol in symbol_results["symbol"].to_list():
+        # fmt: off
         df = (
             ratios.quarter(symbol)
             .join(balance_sheet.quarter(symbol), on=["calendar_year", "period"])
@@ -48,13 +49,17 @@ def run(
             .mean()
             .with_columns(
                 [
+                    # debt_to_equity_ratio = (long_term_debt + short_term_debt) / total_stockholders_equity
                     (
-                        (pl.col("long_term_debt") + pl.col("short_term_debt"))
-                        / pl.col("total_stockholders_equity")
+                        (pl.col("long_term_debt") + pl.col("short_term_debt")) / pl.col("total_stockholders_equity")
                     ).alias("debt_to_equity_ratio"),
-                    (pl.col("total_liabilities") / pl.col("total_stockholders_equity")).alias(
-                        "liabilities_to_equity_ratio"
-                    ),
+
+                    # liabilities_to_equity_ratio = total_liabilities / total_stockholders_equity
+                    (
+                        pl.col("total_liabilities") / pl.col("total_stockholders_equity")
+                    ).alias("liabilities_to_equity_ratio"),
+
+                    # acid_test_ratio = (total_assets - inventory) / total_liabilities
                     (
                         (pl.col("total_assets") - pl.col("inventory")) / pl.col("total_liabilities")
                     ).alias("acid_test_ratio"),
@@ -79,6 +84,7 @@ def run(
                 & (config.liabilities_to_equity_ratio_max >= pl.col("liabilities_to_equity_ratio"))
             )
         )
+        # fmt: on
         if not df.is_empty():
             symbols.add(symbol)
 
