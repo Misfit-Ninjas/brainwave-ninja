@@ -1,4 +1,4 @@
-# Brainwave
+# Brainwave Ninja 🧠🌊🥷
 
 ## Running
 
