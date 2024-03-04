@@ -47,7 +47,7 @@ more-itertools = "^10.1.0"
 
 # Stuff for web requests
 requests = "^2.31.0"
-requests_ratelimiter = "^0.4.2"
+requests_ratelimiter = "^0.6.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
